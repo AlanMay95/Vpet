@@ -55,11 +55,11 @@ def train():
     else: 
         print("please select which stat you would like to train")
 
-
+#Startup
 startup_pypet()
 
 terminate = False
-
+#whileloop
 while not terminate:
     print("#########################")
 
