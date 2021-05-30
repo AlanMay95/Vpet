@@ -4,6 +4,8 @@ import random
 Stage1 = ["Botamon","Poyomon","Punimon","Yuramon"]
 Stage2 = ["Koromon","Tokomon","Tsunomon","Tanemon"]
 Stage3 = ["Gabumon", "Biyomon", "Agumon","Patamon","Elecmon","Penguinmon","Palmon","Betamon"]
+Stage4 = ["Greymon", "Meramon", "Birdramon", "Centarumon", "Monochromon", "Tyranomon", "Devimon", "Ogremon","Leomon","Angemon","Airdramon","Kokatorimon","Unimon","Kabuterimon",
+"Ninjamon","Seadramon","Whamon","Shellmon","Mojyamon","Frigimon","Garurumon","Vegiemon","Bakemon","Drimogemon","Coelamon","Kuwagamon"]
 
 
 #Base Stats
