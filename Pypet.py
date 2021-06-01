@@ -18,7 +18,10 @@ class Digi:
         self.brains = B
         self.evo = evo
     def __eq__(self,other):
-        pass
+        if self.mon == other.evo and self.offense == other.O and self.defense == other.D and self.speed == other.S and self.brains == other.B:
+            self.mon = other.mon
+            print("{0} has evolved into {1}")
+            pass
 class S1(Digi):
     pass
 class S2(Digi):
@@ -27,6 +30,7 @@ class S3(Digi):
     pass
 class S4(Digi):
     pass
+
 
 
 
@@ -170,6 +174,4 @@ while not terminate:
     B = brains
 
     #Evolutions
-    if self.mon == other.evo and self.offense == other.O and self.defense == other.D and self.speed == other.S and self.brains == other.B:
-        self.mon = other.mon
-        print("{0} has evolved into {1}")
+   
