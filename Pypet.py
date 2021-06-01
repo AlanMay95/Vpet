@@ -9,14 +9,16 @@ Stage4 = ["Greymon", "Meramon", "Birdramon", "Centarumon", "Monochromon", "Tyran
 
 #Class
 class Digi:
-    def __init__(self,mon,age,O,D,S,B):
+    def __init__(self,mon,age,O,D,S,B,evo):
         self.mon = mon
         self.age = age
         self.offense = O
         self.defense = D
         self.speed = S
         self.brains = B
-    pass
+        self.evo = evo
+    def __eq__(self,other):
+        pass
 class S1(Digi):
     pass
 class S2(Digi):
@@ -26,16 +28,18 @@ class S3(Digi):
 class S4(Digi):
     pass
 
+
+
 #stage1
-D1 = S1("Botamon",0,1,1,1,1)
-D2 = S1("Poyomon",0,1,1,1,1)
-D3 = S1("Punimon",0,1,1,1,1)
-D4 = S1("Yuramon",0,1,1,1,1)
+D1 = S1("Botamon",0,1,1,1,1,"")
+D2 = S1("Poyomon",0,1,1,1,1,"")
+D3 = S1("Punimon",0,1,1,1,1,"")
+D4 = S1("Yuramon",0,1,1,1,1,"")
 #Stage2
-D5 = S2("Koromon",1,5,5,5,5)
-D6 = S2("Tokomon",1,5,5,5,5)
-D7 = S2("Tsunomon",1,5,5,5,5)
-D8 = S2("Tanemon",1,5,5,5,5)
+D5 = S2("Koromon",1,5,5,5,5,"Botamon")
+D6 = S2("Tokomon",1,5,5,5,5,"Poyomon")
+D7 = S2("Tsunomon",1,5,5,5,5,"Punimon")
+D8 = S2("Tanemon",1,5,5,5,5,"Yuramon")
 #Stage3
 #D9 = S3("Gabumon",2,5,10,10,5)
 #D10 = S3("Biyomon",2,5,5,10,5)
@@ -166,3 +170,6 @@ while not terminate:
     B = brains
 
     #Evolutions
+    if self.mon == other.evo and self.offense == other.O and self.defense == other.D and self.speed == other.S and self.brains == other.B:
+        self.mon = other.mon
+        print("{0} has evolved into {1}")
