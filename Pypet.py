@@ -7,6 +7,39 @@ Stage3 = ["Gabumon", "Biyomon", "Agumon","Patamon","Elecmon","Penguinmon","Palmo
 Stage4 = ["Greymon", "Meramon", "Birdramon", "Centarumon", "Monochromon", "Tyranomon", "Devimon", "Ogremon","Leomon","Angemon","Airdramon","Kokatorimon","Unimon","Kabuterimon",
 "Ninjamon","Seadramon","Whamon","Shellmon","Mojyamon","Frigimon","Garurumon","Vegiemon","Bakemon","Drimogemon","Coelamon","Kuwagamon"]
 
+#Class
+class Digi:
+    def __init__(self,mon,age,O,D,S,B):
+        self.mon = mon
+        self.age = age
+        self.offense = O
+        self.defense = D
+        self.speed = S
+        self.brains = B
+    pass
+class S1(Digi):
+    pass
+class S2(Digi):
+    pass
+class S3(Digi):
+    pass
+class S4(Digi):
+    pass
+
+#stage1
+D1 = S1("Botamon",0,1,1,1,1)
+D2 = S1("Poyomon",0,1,1,1,1)
+D3 = S1("Punimon",0,1,1,1,1)
+D4 = S1("Yuramon",0,1,1,1,1)
+#Stage2
+D5 = S2("Koromon",1,5,5,5,5)
+D6 = S2("Tokomon",1,5,5,5,5)
+D7 = S2("Tsunomon",1,5,5,5,5)
+D8 = S2("Tanemon",1,5,5,5,5)
+#Stage3
+#D9 = S3("Gabumon",2,5,10,10,5)
+#D10 = S3("Biyomon",2,5,5,10,5)
+#D11 = S3()
 
 #Base Stats
 mon = random.choice(Stage1)
@@ -133,148 +166,3 @@ while not terminate:
     B = brains
 
     #Evolutions
-
-    #In-training 1
-    if mon == "Botamon" and O|D|S|B > 2:
-        mon = "Koromon"
-        print ("{0} has evolved into {1}".format(name,mon)  )
-
-    if mon == "Poyomon" and O|D|S|B > 2:
-        mon = "Tokomon"
-        print ("{0} has evolved into {1}".format(name,mon))
-
-    if mon == "Punimon" and O|D|S|B > 2:
-        mon = "Tsunomon"
-        print ("{0} has evolved into {1}".format(name,mon))
-
-    if mon == "Yuramon" and O|D|S|B > 2:
-        mon = "Tanemon"
-        print ("{0} has evolved into {1}".format(name,mon))
-
-    #In-training 2
-    if mon == "Koromon" and O > 10 and D&S&B >5:
-        mon = "Agumon"
-        print ("{0} has evolved into {1}".format(name,mon))
-
-    if mon == "Koromon" and O&B >5 and D&S>10 :
-        mon = "Gabumon"
-        print ("{0} has evolved into {1}".format(name,mon))
-
-    if mon == "Tokomon" and O&B >10 and D&S >5:
-        mon = "Patamon"
-        print ("{0} has evolved into {1}".format(name,mon))
-
-    if mon == "Tokomon" and O&D&B >5 and S >10:
-        mon = "Biyomon"
-        print ("{0} has evolved into {1}".format(name,mon))
-
-    if mon == "Tsunomon" and O|S > 9:
-        mon = "Elecmon"
-        print ("{0} has evolved into {1}".format(name,mon))
-
-    if mon == "Tsunomon" and D|B > 9:
-        mon = "Penguinmon"
-        print ("{0} has evolved into {1}".format(name,mon))
-
-    if mon == "Tanemon" and B > 9:
-        mon = "Palmon"
-        print ("{0} has evolved into {1}".format(name,mon))
-
-    if mon == "Tanemon" and D > 9:
-        mon = "Betamon"
-        print ("{0} has evolved into {1}".format(name,mon))
-
-    #Kunemon - Null
-
-    #Champion
-    if mon == "Agumon" and O&D&S&B >20:
-        mon = "Greymon"
-        print ("{0} has evolved into {1}".format(name,mon))
-        
-    if mon == "Agumon" and O >25 and D&S&B >15:
-        mon = "Meramon"
-        print ("{0} has evolved into {1}".format(name,mon))
-
-    if mon == ("Agumon" or "Biyomon") and S >25:
-        mon = "Birdramon"
-        print ("{0} has evolved into {1}".format(name,mon))
-
-    if mon == ("Agumon" or "Gabumon") and B >25:
-        mon = "Centarumon"
-        print ("{0} has evolved into {1}".format(name,mon))
-
-    if mon == ("Agumon" or "Gabumon") and D >25 and B >20:
-        mon = "Monochromon"
-        print ("{0} has evolved into {1}".format(name,mon))
-
-    if mon == ("Gabumon" or "Patamon") and O >25:
-        mon = "Drimogemon"
-        print ("{0} has evolved into {1}".format(name,mon))
-
-    if mon == "Penguinmon" and B >20:
-        mon = "Frigimon"
-        print ("{0} has evolved into {1}".format(name,mon))
-
-    if mon == ("Agumon" or "Gabumon" or "Patamon") and D >20:
-        mon = "Tyranomon"
-        print ("{0} has evolved into {1}".format(name,mon))
-
-    #Devimon - Null
-
-    if mon == ("Gabumon" or "Patamon") and O >25:
-        mon = "Ogremon"
-        print ("{0} has evolved into {1}".format(name,mon))
-
-    if mon == ("Patamon" or "Elecmon") and O >25 and S&B >20:
-        mon = "Leomon"
-        print ("{0} has evolved into {1}".format(name,mon))
-
-    if mon == ("Patamon" or "Elecmon") and B >25:
-        mon = "Angemon"
-        print ("{0} has evolved into {1}".format(name,mon))
-
-    #Bakemon - Null
-
-    #Mojyamon - Null
-
-    if mon == "Biyomon" and speed > 20 and B >20:
-        mon = "Airdramon"
-        print ("{0} has evolved into {1}".format(name,mon))
-
-    #Kokatorimon - Null
-
-    if mon == ("Patamon" or "Biyomon") and S >20:
-        mon = "Unimon"
-        print ("{0} has evolved into {1}".format(name,mon))
-
-    if mon == ("Biyomon" or "Kunemon") and O&D&S >20:
-        mon = "Kabuterimon"
-        print ("{0} has evolved into {1}".format(name,mon))
-
-    if mon == ("Kunemon" or "Palmon") and O&S >20:
-        mon = "Kuwagumon"
-        print ("{0} has evolved into {1}".format(name,mon))
-
-    #Vegiemon - Null
-
-    if mon == "Palmon" and O&S >20:
-        mon = "Ninjamon"
-        print ("{0} has evolved into {1}".format(name,mon))
-
-    #Seadramon - Null
-
-    if mon == ("Palmon" or "Betamon" or "Penguinmon") and B >20:
-        mon = "Whamon"
-        print ("{0} has evolved into {1}".format(name,mon))
-    
-    if mon == ("Betamon" or "Penguinmon") and D >25:
-        mon = "Shellmon"
-        print ("{0} has evolved into {1}".format(name,mon))
-
-    if mon == ("Palmon" or "Betamon") and D >20:
-        mon = "Coelamon"
-        print ("{0} has evolved into {1}".format(name,mon))
-
-    if mon == ("Gabumon" or "Penguinmon") and D >20:
-        mon = "Garurumon"
-        print ("{0} has evolved into {1}".format(name,mon))
