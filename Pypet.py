@@ -22,13 +22,15 @@ class Digi:
     #    if self.mon == object.evo and self.offense >= object.offense and self.defense >= object.defense and self.speed >= object.speed and self.brains >= object.brains:       
     #        return
 
-
-
 D1 = Digi("Botamon",0,1,1,1,1,"")
-D2 = Digi("Koromon",1,5,5,5,5,"Botamon")
-D3 = Digi("Agumon",2,15,10,10,10,"Koromon")
+D2 =
+D3 =
+D4 =
+D3 = Digi("Koromon",1,5,5,5,5,"Botamon")
+D4 = Digi("Agumon",2,15,10,10,10,"Koromon")
 
-list = [D1,D2,D3]
+Digilist = [D1,D2,D3]
+
 self = D1
 name = self.mon
 
@@ -36,7 +38,7 @@ name = self.mon
 
 
 def Evo(): 
-    for obj in list: 
+    for obj in Digilist: 
         if obj.evo == self.mon and self.offense >= obj.offense and self.defense >= obj.defense and self.speed >= obj.speed and self.brains >= obj.brains:
             self.mon = obj.mon
             print("{0} has evolved into {1}".format(name,self.mon))
