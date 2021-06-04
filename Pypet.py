@@ -2,11 +2,11 @@ from hashlib import new
 import random
 
 #digilist
-Stage1 = ["Botamon","Poyomon","Punimon","Yuramon"]
-Stage2 = ["Koromon","Tokomon","Tsunomon","Tanemon"]
-Stage3 = ["Gabumon", "Biyomon", "Agumon","Patamon","Elecmon","Penguinmon","Palmon","Betamon"]
-Stage4 = ["Greymon", "Meramon", "Birdramon", "Centarumon", "Monochromon", "Tyranomon", "Devimon", "Ogremon","Leomon","Angemon","Airdramon","Kokatorimon","Unimon","Kabuterimon",
-"Ninjamon","Seadramon","Whamon","Shellmon","Mojyamon","Frigimon","Garurumon","Vegiemon","Bakemon","Drimogemon","Coelamon","Kuwagamon"]
+#Stage1 = ["Botamon","Poyomon","Punimon","Yuramon"]
+#Stage2 = ["Koromon","Tokomon","Tsunomon","Tanemon"]
+#Stage3 = ["Gabumon", "Biyomon", "Agumon","Patamon","Elecmon","Penguinmon","Palmon","Betamon"]
+#Stage4 = ["Greymon", "Meramon", "Birdramon", "Centarumon", "Monochromon", "Tyranomon", "Devimon", "Ogremon","Leomon","Angemon","Airdramon","Kokatorimon","Unimon","Kabuterimon",
+#"Ninjamon","Seadramon","Whamon","Shellmon","Mojyamon","Frigimon","Garurumon","Vegiemon","Bakemon","Drimogemon","Coelamon","Kuwagamon"]
 
 #Class
 class Digi:
@@ -23,15 +23,26 @@ class Digi:
     #        return
 
 D1 = Digi("Botamon",0,1,1,1,1,"")
-D2 =
-D3 =
-D4 =
-D3 = Digi("Koromon",1,5,5,5,5,"Botamon")
-D4 = Digi("Agumon",2,15,10,10,10,"Koromon")
+D2 = Digi("Poyomon",0,1,1,1,1,"")
+D3 = Digi("Punimon",0,1,1,1,1,"")
+D4 = Digi("Yuramon",0,1,1,1,1,"")
+D5 = Digi("Koromon",1,3,3,3,3,"Botamon")
+D6 = Digi("Tokomon",1,3,3,3,3,"Poyomon")
+D7 = Digi("Tsunomon",1,3,3,3,3,"Punimon")
+D8 = Digi("Tanemon",1,3,3,3,3,"Yuramon")
+D9 = Digi("Agumon",2,10,5,5,5,"Koromon")
+D10 = Digi("Gabumon",2,5,10,10,5,"Koromon")
+D11 = Digi("Patamon",2,10,5,5,10,"Tokomon")
+D12 = Digi("Biyomon",2,5,5,10,5,"Tokomon")
+D13 = Digi("Kunamon",2,15,15,15,15,["Koromon"or"Tokomon"or"Tsunomon"or"Tanemon"])
+D14 = Digi("Electmon",2,10,5,10,5,"Tsunomon")
+D15 = Digi("Penguinmon",2,5,5,10,10,"Tsunomon")
+D16 = Digi("Palmon",2,5,5,5,10,"Tanemon")
+D17 = Digi("Betamon",2,5,10,5,5,"Tanemon")
 
-Digilist = [D1,D2,D3]
+Digilist = [D1,D2,D3,D4,D5,D6,D7,D8,D9,D10,D11,D12,D13,D14,D15,D16,D17]
 
-self = D1
+self = random.rand(D1,D2,D3,D4)
 name = self.mon
 
 #Base Stats
@@ -40,6 +51,7 @@ name = self.mon
 def Evo(): 
     for obj in Digilist: 
         if obj.evo == self.mon and self.offense >= obj.offense and self.defense >= obj.defense and self.speed >= obj.speed and self.brains >= obj.brains:
+            self.age = obj.age
             self.mon = obj.mon
             print("{0} has evolved into {1}".format(name,self.mon))
             return
