@@ -72,7 +72,7 @@ def pypet_stats():
     print("{0} has {1} speed".format(name,self.speed))
     print("{0} has {1} brains".format(name,self.brains))
     print("{0} is a {1}".format(name,self.mon))
-    print("{0} is {1}".format(name,self.age))
+    print("{0}'s age is {1}".format(name,self.age))
 
     #if food < 3:
     #    print("{0} is hungry!".format(name))
