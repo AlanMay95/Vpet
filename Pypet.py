@@ -1,13 +1,6 @@
 from hashlib import new
 import random
 
-#digilist
-#Stage1 = ["Botamon","Poyomon","Punimon","Yuramon"]
-#Stage2 = ["Koromon","Tokomon","Tsunomon","Tanemon"]
-#Stage3 = ["Gabumon", "Biyomon", "Agumon","Patamon","Elecmon","Penguinmon","Palmon","Betamon"]
-#Stage4 = ["Greymon", "Meramon", "Birdramon", "Centarumon", "Monochromon", "Tyranomon", "Devimon", "Ogremon","Leomon","Angemon","Airdramon","Kokatorimon","Unimon","Kabuterimon",
-#"Ninjamon","Seadramon","Whamon","Shellmon","Mojyamon","Frigimon","Garurumon","Vegiemon","Bakemon","Drimogemon","Coelamon","Kuwagamon"]
-
 #Class
 class Digi:
     def __init__(self,mon,age,offense,defense,speed,brains,evo):
@@ -18,41 +11,40 @@ class Digi:
         self.speed = speed
         self.brains = brains
         self.evo = evo
-    #def __eq__(self, Digi: object):
-    #    if self.mon == object.evo and self.offense >= object.offense and self.defense >= object.defense and self.speed >= object.speed and self.brains >= object.brains:       
-    #        return
 
 #Digilist
-D1 = Digi("Botamon",0,1,1,1,1,[""])
-D2 = Digi("Poyomon",0,1,1,1,1,[""])
-D3 = Digi("Punimon",0,1,1,1,1,[""])
-D4 = Digi("Yuramon",0,1,1,1,1,[""])
-D5 = Digi("Koromon",1,3,3,3,3,["Botamon"])
-D6 = Digi("Tokomon",1,3,3,3,3,["Poyomon"])
-D7 = Digi("Tsunomon",1,3,3,3,3,["Punimon"])
-D8 = Digi("Tanemon",1,3,3,3,3,["Yuramon"])
-D9 = Digi("Agumon",2,10,5,5,5,["Koromon"])
-D10 = Digi("Gabumon",2,5,10,10,5,["Koromon"])
-D11 = Digi("Patamon",2,10,5,5,10,["Tokomon"])
-D12 = Digi("Biyomon",2,5,5,10,5,["Tokomon"])
-D13 = Digi("Kunamon",2,15,15,15,15,["Koromon","Tokomon","Tsunomon","Tanemon"])
-D14 = Digi("Electmon",2,10,5,10,5,["Tsunomon"])
-D15 = Digi("Penguinmon",2,5,5,10,10,["Tsunomon"])
-D16 = Digi("Palmon",2,5,5,5,10,["Tanemon"])
-D17 = Digi("Betamon",2,5,10,5,5,["Tanemon"])
+Botamon = Digi("Botamon",0,1,1,1,1,[""])
+Poyomon = Digi("Poyomon",0,1,1,1,1,[""])
+Punimon = Digi("Punimon",0,1,1,1,1,[""])
+Yuramon = Digi("Yuramon",0,1,1,1,1,[""])
+Koromon = Digi("Koromon",1,3,3,3,3,["Botamon"])
+Tokomon = Digi("Tokomon",1,3,3,3,3,["Poyomon"])
+Tsunomon = Digi("Tsunomon",1,3,3,3,3,["Punimon"])
+Tanemon = Digi("Tanemon",1,3,3,3,3,["Yuramon"])
+Agumon = Digi("Agumon",2,10,5,5,5,["Koromon"])
+Gabumon = Digi("Gabumon",2,5,10,10,5,["Koromon"])
+Patamon = Digi("Patamon",2,10,5,5,10,["Tokomon"])
+Biyomon = Digi("Biyomon",2,5,5,10,5,["Tokomon"])
+Kunemon = Digi("Kunamon",2,15,15,15,15,["Koromon","Tokomon","Tsunomon","Tanemon"])
+Electmon = Digi("Electmon",2,10,5,10,5,["Tsunomon"])
+Penguinmon = Digi("Penguinmon",2,5,5,10,10,["Tsunomon"])
+Palmon = Digi("Palmon",2,5,5,5,10,["Tanemon"])
+Betamon = Digi("Betamon",2,5,10,5,5,["Tanemon"])
 
-Digilist = [D1,D2,D3,D4,D5,D6,D7,D8,D9,D10,D11,D12,D13,D14,D15,D16,D17]
-Starter = [D1,D2,D3,D4]
+
+
+Starters = [Botamon,Poyomon,Punimon,Yuramon]
+Digilist=[Botamon,Poyomon,Punimon,Yuramon,Koromon,Tokomon,Tsunomon,Tanemon,Agumon,Gabumon, Patamon,Biyomon,Kunemon,Electmon,Penguinmon,Palmon,Betamon]
 
 #Starter
-self = random.choice(Starter)
+self = random.choice(Starters)
 name = self.mon
 
 #Evo
-def D13Evo():
-        if self.mon in D13.evo and (self.offense > D13.offense or self.defense > D13.defense or self.speed > D13.speed or self.brains > D13.brains):
-            self.age = D13.age
-            self.mon = D13.mon
+def KunemonEvo():
+        if self.mon in Kunemon.evo and (self.offense > Kunemon.offense or self.defense > Kunemon.defense or self.speed > Kunemon.speed or self.brains > Kunemon.brains):
+            self.age = Kunemon.age
+            self.mon = Kunemon.mon
             print("{0} has evolved into {1}".format(name,self.mon))
             return
 
@@ -65,7 +57,7 @@ def Evo():
             return
 
 def Evos():
-    D13Evo()
+    KunemonEvo()
     Evo()
 
 #Startup
