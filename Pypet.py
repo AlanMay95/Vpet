@@ -1,4 +1,3 @@
-from hashlib import new
 import random
 
 #Class
@@ -62,7 +61,11 @@ def Evos():
 
 #Startup
 def startup_pypet():
+    print("###########################################################################################################")
     print("Welcome to Pypet!\nLet's start with naming your {0}.\nType 'name' to give your {0} a name".format(self.mon))
+    print("###########################################################################################################")
+    print("'Quit' to close\n'Name' to rename {0}\n'Stats' to see {0}'s stats\n'Feed' to feed {0}\n'Train' to improve {0}'s stats".format(name))
+
 
 #Stats
 def pypet_stats():
@@ -124,6 +127,10 @@ def train():
         return
 
 
+def commands():
+     print("'Quit' to close\n'Name' to rename {0}\n'Stats' to see {0}'s stats\n'Feed' to feed {0}\n'Train' to improve {0}'s stats".format(name))
+
+
 #Startup
 startup_pypet()
 
@@ -141,7 +148,7 @@ while not terminate:
         print("Goodbye")
     
     elif user_input == "commands":
-        print("'Quit' to close\n'Name' to rename {0}\n'Stats' to see {0}'s stats\n'Feed' to feed {0}\n'Train' to improve {0}'s stats".format(name))
+        commands()
 
     elif user_input == "name":
         user_input = input("Enter a name for {0} > ".format(name))
