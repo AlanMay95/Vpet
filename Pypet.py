@@ -12,28 +12,27 @@ class Digi:
         self.evo = evo
 
 #Digilist
-Botamon = Digi("Botamon",0,1,1,1,1,[""])
-Poyomon = Digi("Poyomon",0,1,1,1,1,[""])
-Punimon = Digi("Punimon",0,1,1,1,1,[""])
-Yuramon = Digi("Yuramon",0,1,1,1,1,[""])
-Koromon = Digi("Koromon",1,3,3,3,3,["Botamon"])
-Tokomon = Digi("Tokomon",1,3,3,3,3,["Poyomon"])
-Tsunomon = Digi("Tsunomon",1,3,3,3,3,["Punimon"])
-Tanemon = Digi("Tanemon",1,3,3,3,3,["Yuramon"])
-Agumon = Digi("Agumon",2,10,5,5,5,["Koromon"])
-Gabumon = Digi("Gabumon",2,5,10,10,5,["Koromon"])
-Patamon = Digi("Patamon",2,10,5,5,10,["Tokomon"])
-Biyomon = Digi("Biyomon",2,5,5,10,5,["Tokomon"])
-Kunemon = Digi("Kunamon",2,15,15,15,15,["Koromon","Tokomon","Tsunomon","Tanemon"])
-Electmon = Digi("Electmon",2,10,5,10,5,["Tsunomon"])
-Penguinmon = Digi("Penguinmon",2,5,5,10,10,["Tsunomon"])
-Palmon = Digi("Palmon",2,5,5,5,10,["Tanemon"])
-Betamon = Digi("Betamon",2,5,10,5,5,["Tanemon"])
+Starters = []
+Starters.append(Digi("Botamon",0,1,1,1,1,[""]))
+Starters.append(Digi("Poyomon",0,1,1,1,1,[""]))
+Starters.append(Digi("Punimon",0,1,1,1,1,[""]))
+Starters.append(Digi("Yuramon",0,1,1,1,1,[""]))
 
-
-
-Starters = [Botamon,Poyomon,Punimon,Yuramon]
-Digilist=[Botamon,Poyomon,Punimon,Yuramon,Koromon,Tokomon,Tsunomon,Tanemon,Agumon,Gabumon, Patamon,Biyomon,Kunemon,Electmon,Penguinmon,Palmon,Betamon]
+Digilist = []
+Digilist.append(Digi("Koromon",1,3,3,3,3,["Botamon"]))
+Digilist.append(Digi("Tokomon",1,3,3,3,3,["Poyomon"]))
+Digilist.append(Digi("Tsunomon",1,3,3,3,3,["Punimon"]))
+Digilist.append(Digi("Tanemon",1,3,3,3,3,["Yuramon"]))
+Digilist.append(Digi("Agumon",2,10,5,5,5,["Koromon"]))
+Digilist.append(Digi("Gabumon",2,5,10,10,5,["Koromon"]))
+Digilist.append(Digi("Patamon",2,10,5,5,10,["Tokomon"]))
+Digilist.append(Digi("Biyomon",2,5,5,10,5,["Tokomon"]))
+Kunemon = Digi("Kunemon",2,15,15,15,15,["Koromon","Tokomon","Tsunomon","Tanemon"])
+Digilist.append(Kunemon)
+Digilist.append(Digi("Electmon",2,10,5,10,5,["Tsunomon"]))
+Digilist.append(Digi("Penguinmon",2,5,5,10,10,["Tsunomon"]))
+Digilist.append(Digi("Palmon",2,5,5,5,10,["Tanemon"]))
+Digilist.append(Digi("Betamon",2,5,10,5,5,["Tanemon"]))
 
 #Starter
 self = random.choice(Starters)
@@ -41,6 +40,7 @@ name = self.mon
 
 #Evo
 def KunemonEvo():
+    for obj in Digilist:
         if self.mon in Kunemon.evo and (self.offense > Kunemon.offense or self.defense > Kunemon.defense or self.speed > Kunemon.speed or self.brains > Kunemon.brains):
             self.age = Kunemon.age
             self.mon = Kunemon.mon
