@@ -94,7 +94,6 @@ def train():
     user_input = input("> ")
 
     if user_input == "offense":
-        gain = random.randint(1,5)
         self.offense = self.offense + gain
         #food = food -1
         print("{0}'s offense increased by {2}.\n{0}'s offense is now {1}".format(name,self.offense,gain))
