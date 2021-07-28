@@ -1,4 +1,7 @@
 import random
+from tkinter import *
+
+root = Tk()
 
 #Class
 class Digi:
@@ -27,7 +30,7 @@ Digilist.append(Digi("Agumon",2,10,5,5,5,["Koromon"]))
 Digilist.append(Digi("Gabumon",2,5,10,10,5,["Koromon"]))
 Digilist.append(Digi("Patamon",2,10,5,5,10,["Tokomon"]))
 Digilist.append(Digi("Biyomon",2,5,5,10,5,["Tokomon"]))
-Kunemon = Digi("Kunemon",2,15,15,15,15,["Koromon","Tokomon","Tsunomon","Tanemon"])
+Kunemon=Digi("Kunemon",2,15,15,15,15,["Koromon","Tokomon","Tsunomon","Tanemon"])
 Digilist.append(Kunemon)
 Digilist.append(Digi("Electmon",2,10,5,10,5,["Tsunomon"]))
 Digilist.append(Digi("Penguinmon",2,5,5,10,10,["Tsunomon"]))
@@ -39,141 +42,122 @@ self = random.choice(Starters)
 name = self.mon
 
 #Evo
-def KunemonEvo():
-    for obj in Digilist:
-        if self.mon in Kunemon.evo and (self.offense > Kunemon.offense or self.defense > Kunemon.defense or self.speed > Kunemon.speed or self.brains > Kunemon.brains):
-            self.age = Kunemon.age
-            self.mon = Kunemon.mon
-            print("{0} has evolved into {1}".format(name,self.mon))
-            return
 
 def Evo(): 
     for obj in Digilist: 
         if self.mon in obj.evo and self.offense >= obj.offense and self.defense >= obj.defense and self.speed >= obj.speed and self.brains >= obj.brains:
             self.age = obj.age
             self.mon = obj.mon
-            print("{0} has evolved into {1}".format(name,self.mon))
-            return
+            line2.config(text ="Type: {}".format(self.mon))
+            line7.config(text ="Age: {}".format(self.age))
+            line8.config(text ="{0} has digivoled into {1}".format(name,self.mon))
+            
+def KunemonEvo():
+        if self.mon in Kunemon.evo and (self.offense > Kunemon.offense or self.defense > Kunemon.defense or self.speed > Kunemon.speed or self.brains > Kunemon.brains):
+            self.age = Kunemon.age
+            self.mon = Kunemon.mon
+            line2.config(text ="Type: {}".format(self.mon))
+            line7.config(text ="Age: {}".format(self.age))
+            line8.config(text ="{0} has digivoled into {1}".format(name,self.mon))
 
 def Evos():
-    KunemonEvo()
     Evo()
+    KunemonEvo()
 
-#Startup
-def startup_pypet():
-    print("###########################################################################################################")
-    print("Welcome to Pypet!\nLet's start with naming your {0}.\nType 'name' to give your {0} a name".format(self.mon))
-    print("###########################################################################################################")
-    print("'Quit' to close\n'Name' to rename {0}\n'Stats' to see {0}'s stats\n'Feed' to feed {0}\n'Train' to improve {0}'s stats".format(name))
+#Rename
+def Re():
+    Rename =Tk()
 
+    R2 = Label(Rename, text = "Type your name for {}".format(name))
+    R3 = Entry(Rename)
 
-#Stats
-def pypet_stats():
-    #print("{0} weighs {1} pounds".format(name,weight))
-    print("{0} has {1} offense".format(name,self.offense))
-    print("{0} has {1} defense".format(name,self.defense))
-    print("{0} has {1} speed".format(name,self.speed))
-    print("{0} has {1} brains".format(name,self.brains))
-    print("{0} is a {1}".format(name,self.mon))
-    print("{0}'s age is {1}".format(name,self.age))
+    def xyz():
+        global name
+        name = R3.get()
+        line1.config(text="Name: {}".format(name))
+        Rename.destroy()
 
-    #if food < 3:
-    #    print("{0} is hungry!".format(name))
-    #elif food <5:
-    #    print("{0} could eat".format(name))
-    #else:
-    #    print("{0} is full!".format(name))
+    R4 = Button(Rename, text = "Confirm", command = xyz)
+
+    R2.grid(row=0,column=0)
+    R3.grid(row=1,column=0)
+    R4.grid(row=2,column=0)
 
 #training
-def train():
-    print("Which stat would you like to train?")
-    print("Offense = {0}".format(self.offense))
-    print("Defense = {0}".format(self.defense))
-    print("Speed = {0}".format(self.speed))    
-    print("Brains = {0}".format(self.brains))
-    user_input = input("> ")
+def Train():
+    Training =Tk()
 
-    if user_input == "offense":
-        self.offense = self.offense + gain
-        #food = food -1
-        print("{0}'s offense increased by {2}.\n{0}'s offense is now {1}".format(name,self.offense,gain))
+    #Stat Gain
+    def TrainO():
+        RGO = random.randint(1,5)
+        self.offense = self.offense + RGO
+        T2.config(text= "Offense: {}".format(self.offense))
+        T6.config(text= "Offense has increase by {}".format(RGO))
+    def TrainD():
+        RG = random.randint(1,5)
+        self.defense = self.defense + RG
+        T3.config(text= "Defense: {}".format(self.defense))
+        T6.config(text= "Defense has increase by {}".format(RG))
+    def TrainS():
+        RG = random.randint(1,5)
+        self.speed = self.speed + RG
+        T4.config(text= "Speed: {}".format(self.speed))
+        T6.config(text= "Speed has increase by {}".format(RG))
+    def TrainB():
+        RG = random.randint(1,5)
+        self.brains = self.brains + RG
+        T5.config(text= "Brains: {}".format(self.brains))
+        T6.config(text= "Brains has increase by {}".format(RG))
+
+    #Exit  
+    def EndT():
+        line3.config(text ="Offense: {0}".format(self.offense))
+        line4.config(text ="Defense: {}".format(self.defense))
+        line5.config(text ="Speed: {}".format(self.speed))
+        line6.config(text ="Brains: {}".format(self.brains))
         Evos()
-        return
+        Training.destroy()
+        
 
-    elif user_input == "defense":
-        self.defense = self.defense +random.randint(1,5)
-        #food = food -1
-        print("{0}'s defense increaded to {1}".format(name,self.defense))
-        Evos()
-        return
+    T1 = Label(Training, text = "Select that stat you wish to train")
+    T2 = Button(Training, text = "Offense: {}".format(self.offense), command = TrainO)
+    T3 = Button(Training, text = "Defense: {}".format(self.defense), command = TrainD)
+    T4 = Button(Training, text = "Speed: {}".format(self.speed), command = TrainS)
+    T5 = Button(Training, text = "Brains: {}".format(self.brains), command = TrainB)
+    T6 = Label(Training, text="")
+    T7 = Button(Training, text = "Finish training", command = EndT)
 
-    elif user_input == "speed":
-        self.speed = self.speed +random.randint(1,5)
-        #food = food -1
-        print("{0}'s speed increaded to {1}".format(name,self.speed))
-        Evos()
-        return
+    T1.grid(row=0,column=0,columnspan=2)
+    T2.grid(row=1,column=0)
+    T3.grid(row=1,column=1)
+    T4.grid(row=2,column=0)
+    T5.grid(row=2,column=1)
+    T6.grid(row=3,column=0,columnspan=2)
+    T7.grid(row=4,column=0,columnspan=2)
 
-    elif user_input == "brains":
-        self.brains = self.brains +random.randint(1,5)
-        #food = food -1
-        print("{0}'s brains increaded to {1}".format(name,self.brains))
-        Evos()
-        return
+#root window
+line1 = Label(root, text="Name: {0}".format(name))
+line2 = Label(root, text="Type: {0}".format(self.mon))
+line3 = Label(root, text="Offense: {0}".format(self.offense))
+line4 = Label(root, text="Defense: {}".format(self.defense))
+line5 = Label(root, text="Speed: {}".format(self.speed))
+line6 = Label(root, text="Brains: {}".format(self.brains))
+line7 = Label(root, text="Age: {}".format(self.age))
+line8 = Label(root, text="")
 
-    else: 
-        print("please type train again and select which stat you would like to train")
-        return
+line1.grid(row=0, column=0)
+line2.grid(row=0, column=1)
+line3.grid(row=1, column=0)
+line4.grid(row=1, column=1)
+line5.grid(row=2, column=0)
+line6.grid(row=2, column=1)
+line7.grid(row=3, column=0)
+line8.grid(row=4, column=0, columnspan = 2)
 
+button1 = Button(root, text="Rename", command = Re)
+button2 = Button(root, text="Training", command = Train)
 
-def commands():
-     print("'Quit' to close\n'Name' to rename {0}\n'Stats' to see {0}'s stats\n'Feed' to feed {0}\n'Train' to improve {0}'s stats".format(name))
+button1.grid(row=5, column =0)
+button2.grid(row=5, column =1)
 
-
-#Startup
-startup_pypet()
-
-
-terminate = False
-#whileloop
-while not terminate:
-    print("#########################")
-
-    #General Input
-    user_input = input('> ')
-
-    if user_input == "quit":
-        terminate = True
-        print("Goodbye")
-    
-    elif user_input == "commands":
-        commands()
-
-    elif user_input == "name":
-        user_input = input("Enter a name for {0} > ".format(name))
-        name = user_input
-            
-    elif user_input == "stats":
-        pypet_stats()
-
-    #elif user_input == "feed":
-    #    weight = weight + 1
-    #    food = food + 1
-    #    if food <3:
-    #        print("You fed {0}, but they are still hungry!".format(name))
-
-#       elif food <5:
-#            food = food +1
-#            print ("You fed {0}".format(name))
-         
-#        else:
-#            print(self.mon +" is stuffed and can't eat anymore!")
-
-    elif user_input == "train":
-        train()
-
-    else:
-        print("Sorry there was an error. Type 'commands' to see a list of valid commands")
-
-    #Evolutions
-   
+root.mainloop()
