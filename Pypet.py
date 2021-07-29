@@ -22,20 +22,20 @@ Starters.append(Digi("Punimon",0,1,1,1,1,[""]))
 Starters.append(Digi("Yuramon",0,1,1,1,1,[""]))
 
 Digilist = []
-Digilist.append(Digi("Koromon",1,3,3,3,3,["Botamon"]))
-Digilist.append(Digi("Tokomon",1,3,3,3,3,["Poyomon"]))
-Digilist.append(Digi("Tsunomon",1,3,3,3,3,["Punimon"]))
-Digilist.append(Digi("Tanemon",1,3,3,3,3,["Yuramon"]))
-Digilist.append(Digi("Agumon",2,10,5,5,5,["Koromon"]))
-Digilist.append(Digi("Gabumon",2,5,10,10,5,["Koromon"]))
-Digilist.append(Digi("Patamon",2,10,5,5,10,["Tokomon"]))
-Digilist.append(Digi("Biyomon",2,5,5,10,5,["Tokomon"]))
-Kunemon=Digi("Kunemon",2,15,15,15,15,["Koromon","Tokomon","Tsunomon","Tanemon"])
+Digilist.append(Digi("Koromon",1,20,20,20,20,["Botamon"]))
+Digilist.append(Digi("Tokomon",1,20,20,20,20,["Poyomon"]))
+Digilist.append(Digi("Tsunomon",1,20,20,20,20,["Punimon"]))
+Digilist.append(Digi("Tanemon",1,20,20,20,20,["Yuramon"]))
+Digilist.append(Digi("Agumon",2,100,50,50,50,["Koromon"]))
+Digilist.append(Digi("Gabumon",2,50,100,100,50,["Koromon"]))
+Digilist.append(Digi("Patamon",2,100,50,50,100,["Tokomon"]))
+Digilist.append(Digi("Biyomon",2,50,50,100,50,["Tokomon"]))
+Kunemon=Digi("Kunemon",2,150,150,150,150,["Koromon","Tokomon","Tsunomon","Tanemon"])
 Digilist.append(Kunemon)
-Digilist.append(Digi("Electmon",2,10,5,10,5,["Tsunomon"]))
-Digilist.append(Digi("Penguinmon",2,5,5,10,10,["Tsunomon"]))
-Digilist.append(Digi("Palmon",2,5,5,5,10,["Tanemon"]))
-Digilist.append(Digi("Betamon",2,5,10,5,5,["Tanemon"]))
+Digilist.append(Digi("Electmon",2,100,50,100,50,["Tsunomon"]))
+Digilist.append(Digi("Penguinmon",2,50,50,100,100,["Tsunomon"]))
+Digilist.append(Digi("Palmon",2,50,50,50,100,["Tanemon"]))
+Digilist.append(Digi("Betamon",2,50,100,50,50,["Tanemon"]))
 
 #Starter
 self = random.choice(Starters)
@@ -89,22 +89,22 @@ def Train():
 
     #Stat Gain
     def TrainO():
-        RGO = random.randint(1,5)
+        RGO = random.randint(1,10)
         self.offense = self.offense + RGO
         T2.config(text= "Offense: {}".format(self.offense))
         T6.config(text= "Offense has increase by {}".format(RGO))
     def TrainD():
-        RG = random.randint(1,5)
+        RG = random.randint(1,10)
         self.defense = self.defense + RG
         T3.config(text= "Defense: {}".format(self.defense))
         T6.config(text= "Defense has increase by {}".format(RG))
     def TrainS():
-        RG = random.randint(1,5)
+        RG = random.randint(1,10)
         self.speed = self.speed + RG
         T4.config(text= "Speed: {}".format(self.speed))
         T6.config(text= "Speed has increase by {}".format(RG))
     def TrainB():
-        RG = random.randint(1,5)
+        RG = random.randint(1,10)
         self.brains = self.brains + RG
         T5.config(text= "Brains: {}".format(self.brains))
         T6.config(text= "Brains has increase by {}".format(RG))
