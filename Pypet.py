@@ -1,11 +1,12 @@
 import random
 from tkinter import *
+import PIL 
 
 root = Tk()
 
 #Class
 class Digi:
-    def __init__(self,mon,age,offense,defense,speed,brains,evo):
+    def __init__(self,mon,age,offense,defense,speed,brains,evo,pic):
         self.mon = mon
         self.age = age
         self.offense = offense
@@ -13,36 +14,68 @@ class Digi:
         self.speed = speed
         self.brains = brains
         self.evo = evo
+        self.pic = pic
+
+
 
 #Digilist
 Starters = []
-Starters.append(Digi("Botamon",0,1,1,1,1,[""]))
-Starters.append(Digi("Poyomon",0,1,1,1,1,[""]))
-Starters.append(Digi("Punimon",0,1,1,1,1,[""]))
-Starters.append(Digi("Yuramon",0,1,1,1,1,[""]))
+Starters.append(Digi("Botamon",0,1,1,1,1,[""],"<Images/Botamon>"))
+Starters.append(Digi("Poyomon",0,1,1,1,1,[""],"<Images/Poyomon>"))
+Starters.append(Digi("Punimon",0,1,1,1,1,[""],"<Images/Punimon>"))
+Starters.append(Digi("Yuramon",0,1,1,1,1,[""],"<Images/Yuramon>"))
 
 Digilist = []
-Digilist.append(Digi("Koromon",1,20,20,20,20,["Botamon"]))
-Digilist.append(Digi("Tokomon",1,20,20,20,20,["Poyomon"]))
-Digilist.append(Digi("Tsunomon",1,20,20,20,20,["Punimon"]))
-Digilist.append(Digi("Tanemon",1,20,20,20,20,["Yuramon"]))
-Digilist.append(Digi("Agumon",2,100,50,50,50,["Koromon"]))
-Digilist.append(Digi("Gabumon",2,50,100,100,50,["Koromon"]))
-Digilist.append(Digi("Patamon",2,100,50,50,100,["Tokomon"]))
-Digilist.append(Digi("Biyomon",2,50,50,100,50,["Tokomon"]))
-Kunemon=Digi("Kunemon",2,150,150,150,150,["Koromon","Tokomon","Tsunomon","Tanemon"])
+Digilist.append(Digi("Koromon",1,10,10,10,10,["Botamon"],""))
+Digilist.append(Digi("Tokomon",1,10,10,10,10,["Poyomon"],""))
+Digilist.append(Digi("Tsunomon",1,10,10,10,10,["Punimon"],""))
+Digilist.append(Digi("Tanemon",1,10,10,10,10,["Yuramon"],""))
+Digilist.append(Digi("Agumon",2,100,50,50,50,["Koromon"],""))
+Digilist.append(Digi("Gabumon",2,50,100,100,50,["Koromon"],""))
+Digilist.append(Digi("Patamon",2,100,50,50,100,["Tokomon"],""))
+Digilist.append(Digi("Biyomon",2,50,50,100,50,["Tokomon"],""))
+Kunemon=Digi("Kunemon",2,150,150,150,150,["Koromon","Tokomon","Tsunomon","Tanemon"],"")
 Digilist.append(Kunemon)
-Digilist.append(Digi("Electmon",2,100,50,100,50,["Tsunomon"]))
-Digilist.append(Digi("Penguinmon",2,50,50,100,100,["Tsunomon"]))
-Digilist.append(Digi("Palmon",2,50,50,50,100,["Tanemon"]))
-Digilist.append(Digi("Betamon",2,50,100,50,50,["Tanemon"]))
+Digilist.append(Digi("Electmon",2,100,50,100,50,["Tsunomon"],""))
+Digilist.append(Digi("Penguinmon",2,50,100,50,100,["Tsunomon"],""))
+Digilist.append(Digi("Palmon",2,50,50,50,100,["Tanemon"],""))
+Digilist.append(Digi("Betamon",2,50,100,50,50,["Tanemon"],""))
+Digilist.append(Digi("Greymon",3,200,200,200,200,["Agumon"],""))
+Digilist.append(Digi("Meramon",3,250,150,150,150,["Agumon"],""))
+Digilist.append(Digi("Birdramon",3,150,100,250,150,["Agumon","Biyomon"],""))
+Digilist.append(Digi("Centarumon",3,150,150,150,200,["Agumon","Gabumon"],""))
+Digilist.append(Digi("Monochromon",3,150,250,150,200,["Agumon","Gabumon"],""))
+Digilist.append(Digi("Drimogemon",3,250,150,150,150,["Gabumon","Patmon"],""))
+Digilist.append(Digi("Tyrannomon",3,150,200,150,150,["Agumon","Gabumon","Patamon"],""))
+#Digilist.append(Digi("Devimon",3,?,?,?,?,["?"],""))
+Digilist.append(Digi("Ogremon",3,250,150,150,100,["Gabumon","Patamon"],""))
+Digilist.append(Digi("Leomon",3,250,150,200,200,["Patamon","Electmon"],""))
+Digilist.append(Digi("Angemon",3,150,150,150,250,["Patamon","Electmon"],""))
+Digilist.append(Digi("Bakemon",3,150,100,150,50,["Elecmon","Kunemon"],""))
+Digilist.append(Digi("Airdramon",3,150,150,200,200,["Biyomon"],""))
+Digilist.append(Digi("Kokatorimon",3,100,150,150,150,["Electmon","Biyomon"],""))
+Digilist.append(Digi("Unimon",3,150,150,200,150,["Patamon","Biyomon"],""))
+Digilist.append(Digi("Kabuterimon",3,200,200,200,100,["Biyomon","Kunemon"],""))
+Digilist.append(Digi("Kuwagamon",3,200,150,200,100,["Kunemon","Palmon"],""))
+Digilist.append(Digi("Vegiemon",3,100,150,150,100,["Kunemon","Palmon"],""))
+Digilist.append(Digi("Ninjamon",3,200,150,200,150,["Palmon"],""))
+Digilist.append(Digi("Seadramon",3,150,150,100,150,["Betamon"],""))
+Digilist.append(Digi("Whamon",3,100,150,100,200,["Palmon","Betamon","Penguinmon"],""))
+Digilist.append(Digi("Shellmon",3,150,250,100,100,["Betamon","Penguinmon"],""))
+Digilist.append(Digi("Coelamon",3,150,200,150,150,["Palmon","Betamon"],""))
+Digilist.append(Digi("Garurumon",3,150,200,150,150,["Gabumon","Penguinmon"],""))
+Digilist.append(Digi("Frigimon",3,100,150,150,200,["Penguinmon"],""))
+Digilist.append(Digi("Mojyamon",3,150,150,150,150,["Penguinmon"],""))
+#Digilist.append(Digi("Numemon",3,?,?,?,?,["?"],))
+#Digilist.append(Digi("Sukamon",3,?,?,?,?,["?"],))
+#Digilist.append(Digi("Nanimon",3,?,?,?,?,["?"],))
+
 
 #Starter
 self = random.choice(Starters)
 name = self.mon
 
 #Evo
-
 def Evo(): 
     for obj in Digilist: 
         if self.mon in obj.evo and self.offense >= obj.offense and self.defense >= obj.defense and self.speed >= obj.speed and self.brains >= obj.brains:
@@ -144,6 +177,7 @@ line5 = Label(root, text="Speed: {}".format(self.speed))
 line6 = Label(root, text="Brains: {}".format(self.brains))
 line7 = Label(root, text="Age: {}".format(self.age))
 line8 = Label(root, text="")
+Picture = Image.open(self.pic)
 
 line1.grid(row=0, column=0)
 line2.grid(row=0, column=1)
@@ -153,6 +187,7 @@ line5.grid(row=2, column=0)
 line6.grid(row=2, column=1)
 line7.grid(row=3, column=0)
 line8.grid(row=4, column=0, columnspan = 2)
+Picture.grid(Row=2,column=2,rowspan =3,columnspan=2)
 
 button1 = Button(root, text="Rename", command = Re)
 button2 = Button(root, text="Training", command = Train)
